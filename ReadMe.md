@@ -1,1 +1,1 @@
-#Ghi chú khi thực tập ở TNex
+# Ghi chú khi thực tập ở TNex
