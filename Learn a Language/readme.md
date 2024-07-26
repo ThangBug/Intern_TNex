@@ -1,4 +1,4 @@
-Ngôn ngữ lựa chọn: Python
+# Ngôn ngữ lựa chọn: Python
 - Không nghiên cứu chuyên sâu
 - Thử học theo vị trí của dev trước
 - Trình soạn thảo lựa chọn: Pycharm
