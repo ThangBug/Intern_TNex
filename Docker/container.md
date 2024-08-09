@@ -1,4 +1,4 @@
-# Lý thuyết
+## Lý thuyết
 1. Container là gì?
 - Container là một phương pháp đóng gói ứng dụng và các phụ thuộc của nó vào một đơn vị độc lập, giúp chạy ứng dụng đó trên bất kỳ hệ thống nào mà không cần lo lắng về sự khác biệt giữa các môi trường.
 2. Các thành phần chính:
@@ -10,7 +10,7 @@
 - Nhẹ: Containers có trọng lượng nhẹ hơn so với máy ảo vì chúng chia sẻ kernel của hệ điều hành.
 - Di động: Có thể chạy trên bất kỳ môi trường nào có Docker, từ máy cá nhân đến máy chủ hoặc môi trường đám mây.
 - Nhất quán: Đảm bảo rằng ứng dụng chạy giống nhau trên các môi trường khác nhau.
-# Câu Lệnh docker container Cơ Bản
+## Câu Lệnh docker container Cơ Bản
 - Liệt kê số lượng container đang chạy trên host:
   
   `docker ps`
