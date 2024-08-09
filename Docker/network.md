@@ -47,7 +47,9 @@ Khi tạo container, bạn có thể chỉ định mạng sử dụng tùy chọ
 - Tạo và Sử Dụng Network Bridge:
   
   `docker network create --driver bridge my_bridge_network`
+  
   `docker run -d --name container1 --network my_bridge_network my_image`
+  
   `docker run -d --name container2 --network my_bridge_network my_image`
 - Sử Dụng Network Overlay trong Docker Swarm:
   
