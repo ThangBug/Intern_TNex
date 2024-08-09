@@ -33,7 +33,7 @@ Một Dockerfile thường bao gồm các lệnh sau:
 6. CMD:
 - Chỉ định lệnh mặc định để chạy khi container khởi động. Chỉ một CMD có hiệu lực, nếu có nhiều CMD, chỉ lệnh cuối cùng sẽ được sử dụng.
   
- `CMD ["python", "app.py"]`
+  `CMD ["python", "app.py"]`
 7. ENTRYPOINT:
 - Cung cấp một lệnh cố định để chạy khi container khởi động. Có thể kết hợp với CMD để bổ sung tham số cho lệnh.
   
