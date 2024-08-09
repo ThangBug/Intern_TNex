@@ -1,7 +1,7 @@
 # Cài đặt docker
 ## Cài đặt trên ubuntu
 - Cập nhật danh sách gói
-'sudo apt update'
+' sudo apt update '
 - Cài các gói phụ thuộc
 'sudo apt install apt-transport-https ca-certificates curl software-properties-common'
 - Thêm kho lưu trữ docker
