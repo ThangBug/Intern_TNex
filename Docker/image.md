@@ -39,5 +39,6 @@ or
   
   `docker history <name_image>:<tag>`
 - Chạy container từ image
+  
   `docker run <option> <name_image>:<tag>`
 
