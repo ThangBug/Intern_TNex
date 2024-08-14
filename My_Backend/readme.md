@@ -48,3 +48,4 @@
 - venv\Scripts\activate: kích hoạt môi trường ảo venv
 - deactivate: tắt môi trường ảo
 - uvicorn app.main:app --reload: chạy ứng dụng
+- 
