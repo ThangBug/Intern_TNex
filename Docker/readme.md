@@ -4,7 +4,7 @@
 ## Lý thuyết
 - [Container](lythuyet/container.md#Các-khái-niệm-cơ-bản)
 - [Image](lythuyet/image.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Image)
-- [Dockerfile](lythuet/dockerfile.md#Cấu-trúc-cơ-bản-của-dockerfile)
+- [Dockerfile](lythuyet/dockerfile.md#Cấu-trúc-cơ-bản-của-dockerfile)
 - [Network](lythuyet/network.md#Network)
 - [Registry](lythuyet/registry.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Registry)
 - [Volume](lythuyet/volume.md#Các-loại-volume)
@@ -15,7 +15,7 @@
 - [Dockerfile](thuchanh/dockerfile.md#Thực-hành-dockerfile)
 - [Network](thuchanh/network.md#Thực-hành-network)
 - [Registry](thuchanh/registry.md#Thực-hành-docker-registry)
-- [Volume](thuchnah/volume.md#Thực-hành-với-docker-volume)
+- [Volume](thuchanh/volume.md#Thực-hành-với-docker-volume)
 
 # Tham khảo
 - https://github.com/hocchudong/ghichep-docker/tree/master
