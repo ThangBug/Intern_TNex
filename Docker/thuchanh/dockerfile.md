@@ -5,13 +5,16 @@ Dưới đây là một kiến trúc các thành phần cơ bản trong một `d
 
 - Đầu tiên cần chỉ định image gốc được sử dụng trong quá trình tạo image mới bằng dockerfile
 
-`FROM ubuntu:14.04`
+ `FROM ubuntu:14.04`
+
 - Bổ sung thông tin về người tạo ra dockerfile này
 
-`MAINTAINER tannt`
+ `MAINTAINER tannt`
+
 - Chạy các lệnh sẽ cài đặt bổ sung gói cho image, giả sử tôi muốn tạo image apache.
 
-`RUN apt-get update -y && apt-get install apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*`
+ `RUN apt-get update -y && apt-get install apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*`
+
 - Chỉ định một số cấu hình biến môi trường để apache chạy trong container:
 
 ```ENV APACHE_RUN_USER www-data
@@ -27,10 +30,11 @@ ENV APACHE_DOCUMENTROOT /var/www
 ```
 - Cung cấp cổng mà dịch vụ apache trong container kết nối ra ngoài:
 
-`EXPOSE 80`
+ `EXPOSE 80`
 - Lệnh mà ứng dụng trong container được tạo ra sẽ thực thi:
 
-`CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]`
+ `CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]`
+
 Bây giờ ta sẽ tổng hợp các thành phần rời rạc ở trên thành một tập tin hoàn chỉnh và tạo image:
 
 - Tạo một script tên `dockerfile.sh` có nội dung dưới:
@@ -65,10 +69,12 @@ docker build -t apache_test .
 ```
 - Trên host, thực hiện lệnh sau để tạo ra một image tên là `apache_test`
 
-`bash dockerfile.sh`
+ `bash dockerfile.sh`
+
 Kiểm tra image có tên `apache_test` vừa tạo
 
-`docker images`
+ `docker images`
+
 Tạo container từ image mới tạo bởi dockerfile
 
-`docker run -it apache_test /bin/bash`
+ `docker run -it apache_test /bin/bash`
