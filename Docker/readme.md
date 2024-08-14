@@ -10,3 +10,4 @@
 # Tham khảo
 - https://github.com/hocchudong/ghichep-docker/tree/master
 - https://www.youtube.com/watch?v=yWCse8S2qsM
+- https://docker-ghichep.readthedocs.io/en/latest/README/
