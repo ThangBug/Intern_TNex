@@ -57,6 +57,7 @@ RUN apt-get install wget -y
 CMD curl ifconfig.io
 ```
 3.4 LABEL
+
 `LABEL <key>=<value> <key>=<value> <key>=<value> ...`
 - Chỉ thị LABEL dùng để add các metadata vào image.
 
@@ -70,6 +71,7 @@ that label-values can span multiple lines."
 - Để xem các label của images, dùng lệnh docker inspect. "Labels": { "com.example.vendor": "ACME Incorporated" "com.example.label-with-value": "foo", "version": "1.0", "description": "This text illustrates that label-values can span multiple lines.", "multi.label1": "value1", "multi.label2": "value2", "other": "value3" },
 
 3.5 MAINTAINER
+
 `MAINTAINER <name>`
 - Dùng để đặt tên giả của images.
 
@@ -78,16 +80,19 @@ that label-values can span multiple lines."
 `LABEL maintainer "SvenDowideit@home.org.au"`
 
 3.6 EXPOSE
+
 `EXPOSE <port> [<port>...]`
 - Lệnh EXPOSE thông báo cho Docker rằng image sẽ lắng nghe trên các cổng được chỉ định khi chạy. Lưu ý là cái này chỉ để khai báo, chứ ko có chức năng nat port từ máy host vào container. Muốn nat port, thì phải sử dụng cờ -p (nat một vài port) hoặc -P (nat tất cả các port được khai báo trong EXPOSE) trong quá trình khởi tạo contrainer.
 
 3.7 ENV
+
 ```ENV <key> <value>
 ENV <key>=<value> ...
 ```
 - Khai báo cáo biến giá trị môi trường. Khi run container từ image, các biến môi trường này vẫn có hiệu lực.
 
 3.8 ADD
+
 ```ADD has two forms:
 ADD <src>... <dest>
 ADD ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
@@ -105,6 +110,7 @@ Note: If your URL files are protected using authentication, you will need to use
 - If doesn’t exist, it is created along with all missing directories in its path.
 
 3.9 COPY
+
 ```COPY <src>... <dest>
 COPY ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
 ```
@@ -112,12 +118,14 @@ COPY ["<src>",... "<dest>"] (this form is required for paths containing whitespa
 - Các lưu ý tương tự chỉ thị ADD.
 
 3.10 ENTRYPOINT
+
 ```ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)
 ENTRYPOINT command param1 param2 (shell form)
 ```
 - Hai cái CMD và ENTRYPOINT có tác dụng tương tự nhau. Nếu một Dockerfile có cả CMD và ENTRYPOINT thì CMD sẽ thành param cho script ENTRYPOINT. Lý do người ta dùng ENTRYPOINT nhằm chuẩn bị các điều kiện setup như tạo user, mkdir, change owner... cần thiết để chạy service trong container.
 
 3.11 VOLUME
+
 `VOLUME ["/data"]`
 - mount thư mục từ máy host và container. Tương tự option -v khi tạo container.
 - Thư mục chưa volumes là /var/lib/docker/volumes/. Ứng với mỗi container sẽ có các thư mục con nằm trong thư mục này. Tìm thư mục chưa Volumes của container sad_euclid:
@@ -125,23 +133,28 @@ ENTRYPOINT command param1 param2 (shell form)
                 "Source": "/var/lib/docker/volumes/491a2a775a4cf02bbaca105ec25995008cc7adbc5511e054bb9c6a691a2681ee/_data",
 ```
 3.12 USER
+
 `USER daemon`
 - Set username hoặc UID để chạy các lệnh RUN, CMD, ENTRYPOINT trong dockerfiles.
 
 3.13 WORKDIR
+
 `WORKDIR /path/to/workdir`
 - Chỉ thị WORKDIR dùng để đặt thư mục đang làm việc cho các chỉ thị khác như: RUN, CMD, ENTRYPOINT, COPY, ADD,...
 
 3.14 ARG
+
 `ARG <name>[=<default value>]`
 - Chỉ thị ARG dùng để định nghĩa các giá trị của biến được dùng trong quá trình build image (lệnh docker build --build-arg =).
 - biến ARG sẽ không bền vững như khi sử dụng ENV.
 
 3.15 STOPSIGNAL
+
 `STOPSIGNAL signal`
 - Gửi tín hiệu để container tắt đúng cách.
 
 3.16 SHELL
+
 `SHELL ["executable", "parameters"]`
 - Chỉ thị Shell cho phép các shell form khác có thể ghi đè shell mặc định.
 - Mặc định trên Linux là ["/bin/sh", "-c"] và Windows là ["cmd", "/S", "/C"].
