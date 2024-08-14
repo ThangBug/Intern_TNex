@@ -1,21 +1,21 @@
 # Mục lục
+- [Cài đặt Docker](caidat.md#Cài-đặt-docker)
 
 ## Lý thuyết
-- [Cài đặt Docker](caidat.md#Cài-đặt-docker)
-- [Container](container.md#Các-khái-niệm-cơ-bản)
-- [Image](image.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Image)
-- [Dockerfile](dockerfile.md#Cấu-trúc-cơ-bản-của-dockerfile)
-- [Network](network.md#Network)
-- [Registry](registry.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Registry)
-- [Volume](volume.md#Các-loại-volume)
+- [Container](lythuyet/container.md#Các-khái-niệm-cơ-bản)
+- [Image](lythuyet/image.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Image)
+- [Dockerfile](lythuet/dockerfile.md#Cấu-trúc-cơ-bản-của-dockerfile)
+- [Network](lythuyet/network.md#Network)
+- [Registry](lythuyet/registry.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Registry)
+- [Volume](lythuyet/volume.md#Các-loại-volume)
 
 ## Thực hành
-- [Container](container.md#Thực-hành-container) 
-- [Image](image.md#Thực-hành-image)
-- [Dockerfile](dockerfile.md#Thực-hành-dockerfile)
-- [Network](network.md#Thực-hành-network)
-- [Registry](registry.md#Thực-hành-docker-registry)
-- [Volume](volume.md#Thực-hành-với-docker-volume)
+- [Container](thuchanh/container.md#Thực-hành-container) 
+- [Image](thuchanh/image.md#Thực-hành-image)
+- [Dockerfile](thuchanh/dockerfile.md#Thực-hành-dockerfile)
+- [Network](thuchanh/network.md#Thực-hành-network)
+- [Registry](thuchanh/registry.md#Thực-hành-docker-registry)
+- [Volume](thuchnah/volume.md#Thực-hành-với-docker-volume)
 
 # Tham khảo
 - https://github.com/hocchudong/ghichep-docker/tree/master
