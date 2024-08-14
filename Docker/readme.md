@@ -8,6 +8,7 @@
 - [Network](lythuyet/network.md#Network)
 - [Registry](lythuyet/registry.md#Các-Khái-Niệm-Cơ-Bản-về-Docker-Registry)
 - [Volume](lythuyet/volume.md#Các-loại-volume)
+- [Compose](lythuyet/docker-compose.md#Các-Thành-Phần-Chính)
 
 ## Thực hành
 - [Container](thuchanh/container.md#Thực-hành-container) 
