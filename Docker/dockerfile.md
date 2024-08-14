@@ -22,7 +22,9 @@ INSTRUCTION arguments
 RUN echo 'we are running some # of cool things'
 ```
 - Chúng ta sẽ đi tìm hiểu các INSTRUCTION
+
 3. Dockerfile Commands
+
 3.1 FROM
 - Dùng để chỉ ra image được build từ đâu (từ image gốc nào)
 ```FROM ubuntu
@@ -66,6 +68,7 @@ LABEL description="This text illustrates \
 that label-values can span multiple lines."
 ```
 - Để xem các label của images, dùng lệnh docker inspect. "Labels": { "com.example.vendor": "ACME Incorporated" "com.example.label-with-value": "foo", "version": "1.0", "description": "This text illustrates that label-values can span multiple lines.", "multi.label1": "value1", "multi.label2": "value2", "other": "value3" },
+
 3.5 MAINTAINER
 `MAINTAINER <name>`
 - Dùng để đặt tên giả của images.
@@ -73,14 +76,17 @@ that label-values can span multiple lines."
 - Hoặc bạn có thể sử dụng
 
 `LABEL maintainer "SvenDowideit@home.org.au"`
+
 3.6 EXPOSE
 `EXPOSE <port> [<port>...]`
 - Lệnh EXPOSE thông báo cho Docker rằng image sẽ lắng nghe trên các cổng được chỉ định khi chạy. Lưu ý là cái này chỉ để khai báo, chứ ko có chức năng nat port từ máy host vào container. Muốn nat port, thì phải sử dụng cờ -p (nat một vài port) hoặc -P (nat tất cả các port được khai báo trong EXPOSE) trong quá trình khởi tạo contrainer.
+
 3.7 ENV
 ```ENV <key> <value>
 ENV <key>=<value> ...
 ```
 - Khai báo cáo biến giá trị môi trường. Khi run container từ image, các biến môi trường này vẫn có hiệu lực.
+
 3.8 ADD
 ```ADD has two forms:
 ADD <src>... <dest>
@@ -97,12 +103,14 @@ Note: If your URL files are protected using authentication, you will need to use
 - If multiple resources are specified, either directly or due to the use of a wildcard, then must be a directory, and it must end with a slash /.
 - If does not end with a trailing slash, it will be considered a regular file and the contents of will be written at .
 - If doesn’t exist, it is created along with all missing directories in its path.
+
 3.9 COPY
 ```COPY <src>... <dest>
 COPY ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
 ```
 - Chỉ thị COPY, copy file, thư mục (src) và thêm chúng vào filesystem của container (dest).
 - Các lưu ý tương tự chỉ thị ADD.
+
 3.10 ENTRYPOINT
 ```ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)
 ENTRYPOINT command param1 param2 (shell form)
@@ -119,16 +127,20 @@ ENTRYPOINT command param1 param2 (shell form)
 3.12 USER
 `USER daemon`
 - Set username hoặc UID để chạy các lệnh RUN, CMD, ENTRYPOINT trong dockerfiles.
+
 3.13 WORKDIR
 `WORKDIR /path/to/workdir`
 - Chỉ thị WORKDIR dùng để đặt thư mục đang làm việc cho các chỉ thị khác như: RUN, CMD, ENTRYPOINT, COPY, ADD,...
+
 3.14 ARG
 `ARG <name>[=<default value>]`
 - Chỉ thị ARG dùng để định nghĩa các giá trị của biến được dùng trong quá trình build image (lệnh docker build --build-arg =).
 - biến ARG sẽ không bền vững như khi sử dụng ENV.
+
 3.15 STOPSIGNAL
 `STOPSIGNAL signal`
 - Gửi tín hiệu để container tắt đúng cách.
+
 3.16 SHELL
 `SHELL ["executable", "parameters"]`
 - Chỉ thị Shell cho phép các shell form khác có thể ghi đè shell mặc định.
