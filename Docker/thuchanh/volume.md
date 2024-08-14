@@ -11,9 +11,11 @@ docker run --name apache_test2 -p 8080:80 -p 443:443 -v /root/web_test:/var/www/
 Kiểm tra volume đang được mount vào trong container bằng lệnh
 
 `docker inspect -f '{{ .Mounts }}'  apache_test2`
+
 ==> Kết quả kiểm tra:
 
 `[{bind  /root/web_test /var/www   true rprivate}]`
+
 Nếu kiểm tra bằng lệnh `docker inspect apache_test2`:
 
 ```"Mounts": [
@@ -27,6 +29,7 @@ Nếu kiểm tra bằng lệnh `docker inspect apache_test2`:
     }
 ],
 ```
+
 Thực hiện thêm file trong thư mục được mount vào container để xem container có không:
 
 ```touch local_file
@@ -36,14 +39,17 @@ docker exec apache_test2 ls /var/www/
 Mặc định `container` sẽ có quyền `rw` trên volume được gắn thêm vào. chỉ định để container chỉ có quyền đọc bằng cách thêm tham số `ro` sau chỉ dẫn mount volume:
 
 `docker run --name apache_test3 -p 8081:80 -p 444:443 -v /root/web_test:/var/www/:ro -d eboraas/apache`
+
 Note: Volume được gắn vào theo kiểu `bind mount` sẽ tạo mới đường dẫn được gắn hoặc nếu có đường dẫn rồi thì ghi đè toàn bộ dữ liệu.
 
 Sử dụng kiểu `docker mananged volume`. Ta tạo volume bằng lệnh:
 
 `docker volume create --name avolume`
+
 Kiểm tra volume vừa tạo:
 
 `docker volume inspect avolume`
+
 Ta tạo một container với kiểu `docker mananged volume`:
 
 ```mkdir -p /root/web_test2 && cd /root/web_test2
@@ -53,9 +59,11 @@ docker run --name apache_test3 -p 8081:80 -p 444:443 -v avolume:/var/www/ -d ebo
 Kiểm tra volume gắn vào container `apache_test3`:
 
 `docker inspect -f '{{ .Mounts }}'  apache_test3`
+
 ==> Kết quả:
 
 `[{volume avolume /var/lib/docker/volumes/avolume/_data /var/www local z true }]`
+
 Nếu kiểm tra bằng lệnh `docker inspect apache_test3`:
 
 ```"Mounts": [
