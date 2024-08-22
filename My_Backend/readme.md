@@ -48,4 +48,6 @@
 - venv\Scripts\activate: kích hoạt môi trường ảo venv
 - deactivate: tắt môi trường ảo
 - uvicorn app.main:app --reload: chạy ứng dụng
-- 
+- docker build -t my-fastapi-app . : build từ dockerfile
+- docker run -p 8000:8000 my-fastapi-app: chạy container
+- docker-compose up: chạy bằng docker compose
